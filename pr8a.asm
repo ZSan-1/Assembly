@@ -1,0 +1,15 @@
+TITLE pr8a.asm
+DOSSEG
+.MODEL SMALL
+.STACK 0100h
+.DATA
+	msg db "Hello World$"
+.CODE
+	MOV AX, @DATA
+	MOV DS, AX
+	MOV AH, 09H
+	MOV DX, OFFSET msg
+	INT 21H
+	MOV AX, 4C00h
+	INT 21h
+END
